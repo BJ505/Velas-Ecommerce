@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UT-8">
+    <title>JuegaTodo</title>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Se agrega bootstrap y jquery -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+
+    <div class="wrapper fadeInDown container">
+        <div id="formContent">
+
+            <div class="fadeIn first">
+                <!-- Logo -->
+                <img src="img/logo.png" class="img-login" id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form">
+                <input type="text" id="username" class="fadeIn second" name="login" placeholder="Nombre de Usuario">
+                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Contraseña">
+                <input type="submit" class="fadeIn fourth" value="Entrar">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="registro.html">Registrar</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- bootstrap -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/login.js"></script>
+    <script src="js/db.js"></script>
+</body>
+</html>
+
+
