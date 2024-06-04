@@ -1,0 +1,7 @@
+[  
+    {"id": 1,"nombre":"Vela Corazón", "precio":9990, "imagen":"./img/productos/vela-corazon.jpeg"},
+    {"id": 2,"nombre":"Vela Blanco y Negro", "precio":12990, "imagen":"./img/productos/vela-blancoynegro.png"},
+    {"id": 3,"nombre":"Vela Flor de Loto", "precio":8990, "imagen":"./img/productos/vela-flordeloto.png"},
+    {"id": 4,"nombre":"Vela Piramide", "precio":4990, "imagen":"./img/productos/vela-piramide.jpeg"},
+    {"id": 5,"nombre":"Vela Barbie", "precio":9990, "imagen":"./img/productos/vela-barbie.png"}
+]  

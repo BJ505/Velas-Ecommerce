@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Simulación de base de datos local
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
     // Función para registrar usuarios
     function registrarUsuario(email, name, password, username, perfil) {
@@ -10,14 +11,36 @@ document.addEventListener('DOMContentLoaded', function() {
             mostrarAlerta('El usuario ya existe.', 'danger');
             console.log('El usuario ya existe.');
             return false;
-    }
+        }
 
-    const nuevoUsuario = { email, name, password, username, perfil };
+        const nuevoUsuario = { email, name, password, username, perfil };
         usuarios.push(nuevoUsuario);
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
         mostrarAlerta('Usuario registrado exitosamente.', 'success');
         console.log('Usuario registrado exitosamente:', nuevoUsuario);
         return true;
+    }
+
+    // Función para agregar al carrito
+    function addtocart(id, cant) {
+        const anadirnuevo = { id, cant };
+        carrito.push(anadirnuevo);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarAlerta('Producto agregado exitosamente.', 'success');
+        console.log('Prodcuto agregado exitosamente:', anadirnuevo);
+        return true;
+    }
+
+    //Eliminar del carrito
+    function deletefromcart(id) {
+        console.log("id a eliminar",id);
+        let newList = carrito;
+        console.log(newList);
+        let index = newList.findIndex(item => item.id === id)
+        console.log(index);
+        newList.splice(index, 1);
+        console.log(newList);
+        localStorage.setItem('carrito', JSON.stringify(newList));
     }
 
     // Función para iniciar sesión
@@ -34,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
     }
-  
+
     // Función para mostrar alertas
     function mostrarAlerta(mensaje, tipo) {
         const alertaDiv = document.createElement('div');
@@ -61,5 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Exportar funciones
     window.registrarUsuario = registrarUsuario;
+    window.addtocart = addtocart;
+    window.deletefromcart = deletefromcart;
     window.iniciarSesion = iniciarSesion;
 });
